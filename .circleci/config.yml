@@ -29,12 +29,9 @@ jobs:
           command: "echo 'world!'"
 
 workflows:
-  say-hello-workflow:
+  default:
     jobs:
       - say-hello
-
-  say-world-workflow:
-    jobs:
       - say-world:
         requires:
           - say-hello
