@@ -6,7 +6,6 @@ jobs:
       - image: alpine/latest
 
     steps:
-      - checkout
       - run:
           name: "Say hello"
           command: "echo 'Hello, '"
@@ -16,7 +15,6 @@ jobs:
       - image: alpine/latest
     
     steps:
-      - checkout
       - run:
           name: "Say world"
           command: "echo 'world!'"
