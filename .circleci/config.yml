@@ -14,6 +14,15 @@ jobs:
     steps:
       - run: echo 'world!'
 
+  print-my-name:
+    docker:
+      - image: alpine:latest
+
+    steps:
+      - Name: "Print My Name"
+        run: |
+          echo "Hello $MY_NAME"
+
 workflows:
   welcome:
     jobs:
@@ -21,3 +30,7 @@ workflows:
       - say-world:
           requires:
             - say-hello
+
+      - print-my-name:
+          requires:
+            - say-world
