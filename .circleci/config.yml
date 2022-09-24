@@ -20,9 +20,9 @@ jobs:
 
     steps:
       - run: 
-        name: "Print My Name"
-        command: |
-          echo "Hello $MY_NAME"
+          name: "Print My Name"
+          command: |
+            echo "Hello $MY_NAME"
 
 workflows:
   welcome:
