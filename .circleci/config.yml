@@ -19,8 +19,7 @@ jobs:
       - image: alpine:latest
 
     steps:
-      - run: |
-        echo "Hello $MY_NAME"
+      - run: echo "Hello $MY_NAME"
 
 workflows:
   welcome:
