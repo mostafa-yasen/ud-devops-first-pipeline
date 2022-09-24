@@ -3,21 +3,16 @@ version: 2.1
 jobs:
   say_hello:
     docker:
-      - image: alpine/latest
-
+      - image: alpine:latest
     steps:
-      - run:
-          name: "Say hello"
-          command: "echo 'Hello, '"
+      - run: echo 'Hello, '
 
   say_world:
     docker:
-      - image: alpine/latest
+      - image: alpine:latest
     
     steps:
-      - run:
-          name: "Say world"
-          command: "echo 'world!'"
+      - run: echo 'world!'
 
 workflows:
   welcome:
@@ -25,4 +20,4 @@ workflows:
       - say_hello
       - say_world:
         requires:
-          - say-hello
+          - say_hello
