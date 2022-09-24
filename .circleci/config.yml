@@ -18,6 +18,6 @@ workflows:
   welcome:
     jobs:
       - say-hello
-      - say-world
-        # requires:
-        #   - say_hello
+      - say-world:
+          requires:
+            - say-hello
