@@ -1,33 +1,23 @@
 version: 2.1
 
-# jobs:
-#   say_hello:
-#     docker:
-#       - image: alpine:latest
-#     steps:
-#       - run: echo 'Hello, '
+jobs:
+  say-hello:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: echo 'Hello, '
 
-#   say_world:
-#     docker:
-#       - image: alpine:latest
+  say-world:
+    docker:
+      - image: alpine:latest
     
-#     steps:
-#       - run: echo 'world!'
+    steps:
+      - run: echo 'world!'
 
 workflows:
   welcome:
     jobs:
-      - say_hello:
-        docker:
-          - image: alpine:latest
-        steps:
-          - run: echo 'Hello, '
-
+      - say-hello
       - say_world:
-          docker:
-            - image: alpine:latest
-          
-          steps:
-            - run: echo 'world!'
-          requires:
-            - say_hello
+        requires:
+          - say_hello
